@@ -97,8 +97,6 @@ TreeNode *minimum(TreeNode *x) {
   return NULL;
 }
 
-TreeNode *minimum(TreeNode *x) {}
-
 void removeNode(TreeMap *tree, TreeNode *node) {}
 
 void eraseTreeMap(TreeMap *tree, void *key) {
