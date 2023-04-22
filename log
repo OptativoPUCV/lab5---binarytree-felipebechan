@@ -8,3 +8,15 @@ Sat 22 Apr 2023 11:09:08 PM UTC:
  tests:  4|7
 total_score: 5/70
 bf87534
+Sat 22 Apr 2023 11:17:20 PM UTC: 
+ treemap.c | 49 ++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 48 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c:99:11: error: redefinition of ‘minimum’
+   99 | TreeNode *minimum(TreeNode *x) { return NULL; }
+      |           ^~~~~~~
+treemap.c:87:11: note: previous definition of ‘minimum’ with type ‘TreeNode *(TreeNode *)’
+   87 | TreeNode *minimum(TreeNode *x) {
+      |           ^~~~~~~
+Compilation failed
+f7d8fc4
