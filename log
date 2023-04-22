@@ -32,3 +32,15 @@ treemap.c:95:12: note: previous definition of ‘minimum’ with type ‘TreeNod
       |            ^~~~~~~
 Compilation failed
 de9f245
+Sat 22 Apr 2023 11:21:34 PM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c:100:11: error: redefinition of ‘minimum’
+  100 | TreeNode *minimum(TreeNode *x) { return NULL; }
+      |           ^~~~~~~
+treemap.c:88:11: note: previous definition of ‘minimum’ with type ‘TreeNode *(TreeNode *)’
+   88 | TreeNode *minimum(TreeNode *x) {
+      |           ^~~~~~~
+Compilation failed
+f6515a9
