@@ -190,7 +190,6 @@ Pair *upperBound(TreeMap *tree, void *key) {
   }
   return NULL;
 }
-// done
 
 Pair *firstTreeMap(TreeMap *tree) {
   tree->current = minimum(tree->root);
@@ -198,7 +197,6 @@ Pair *firstTreeMap(TreeMap *tree) {
     return NULL;
   return tree->current->pair;
 }
-// done
 
 Pair *nextTreeMap(TreeMap *tree) {
   // falta retornanr nodo
