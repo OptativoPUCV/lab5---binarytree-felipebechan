@@ -163,7 +163,33 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
 }
 // done
 
-Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
+Pair *upperBound(TreeMap *tree, void *key) {
+  TreeNode *nodo_actual = tree->root;
+  TreeNode *node_ubi = NULL;
+
+  while (nodo_actual != NULL) {
+
+    if (tree->lower_than(nodo_actual->pair->key, key) == 0 &&
+        tree->lower_than(key, nodo_actual->pair->key) == 0) {
+      return nodo_actual->pair;
+    }
+
+    else if (tree->lower_than(nodo_actual->pair->key, key) == 0 &&
+             tree->lower_than(key, nodo_actual->pair->key) == 1)
+
+    {
+      node_ubi = nodo_actual;
+      nodo_actual = nodo_actual->left;
+    } else {
+      nodo_actual = nodo_actual->right;
+    }
+  }
+  if (node_ubi != NULL) {
+
+    return node_ubi->pair;
+  }
+  return NULL;
+}
 
 Pair *firstTreeMap(TreeMap *tree) {
   tree->current = minimum(tree->root);
