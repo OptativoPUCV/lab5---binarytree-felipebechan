@@ -100,19 +100,33 @@ TreeNode *minimum(TreeNode *t) {
 }
 // done
 
-// Nodo sin hijos.
 void removeNode(TreeMap *tree, TreeNode *node) {
-  TreeNode *a_node;
-  //
-  // check sin hijos
+  TreeNode *pparent = node->parent;
   if (node->left == NULL && node->right == NULL) {
-    if (node == tree->root) {
-      tree->root = NULL;
-      tree->current = NULL;
-    } else if (node->parent->left == node) {
-      node->parent->left = NULL;
+    if (pparent->left == node) {
+      pparent->left = NULL;
     } else {
-      node->parent->right = NULL;
+      pparent->right = NULL;
+    }
+  } else if (node->left == NULL || node->right == NULL) {
+    TreeNode *hijo;
+    if (node->left != NULL) {
+      hijo = node->left;
+    } else {
+      hijo = node->right;
+    }
+    if (pparent->right == node) {
+      pparent->right = hijo;
+    } else {
+      pparent->left = hijo;
+    }
+    hijo->parent = pparent;
+  } else {
+    if (node->right != NULL || node->left != NULL) {
+      TreeNode *min = minimum(node->right);
+      node->pair->key = min->pair->key;
+      node->pair->value = min->pair->value;
+      removeNode(tree, min);
     }
   }
 }
