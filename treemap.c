@@ -147,4 +147,4 @@ Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
 
 Pair *firstTreeMap(TreeMap *tree) { return NULL; }
 
-Pair *nextTreeMap(TreeMap *tree) {}
+Pair *nextTreeMap(TreeMap *tree) { return NULL; }
