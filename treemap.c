@@ -98,7 +98,7 @@ TreeNode *minimum(TreeNode *t) {
   }
   return NULL;
 }
-// done
+
 
 void removeNode(TreeMap *tree, TreeNode *node) {
   TreeNode *pparent = node->parent;
