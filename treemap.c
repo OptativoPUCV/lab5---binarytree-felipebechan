@@ -201,7 +201,7 @@ Pair *firstTreeMap(TreeMap *tree) {
 // done
 
 Pair *nextTreeMap(TreeMap *tree) {
-  TreeNode *aux = tree->current;
+  
   return NULL;
 }
 // mamma mia
