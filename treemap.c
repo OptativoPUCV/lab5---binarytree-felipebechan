@@ -202,15 +202,6 @@ Pair *firstTreeMap(TreeMap *tree) {
 
 Pair *nextTreeMap(TreeMap *tree) {
   TreeNode *aux = tree->current;
-  if (aux->right != NULL) {
-    aux = minimum(aux->right);
-  } else {
-    TreeNode *parent = aux->parent;
-    while (parent != NULL && aux == parent->right) {
-      aux = parent;
-      parent = parent->parent;
-    }
-    aux = parent;
-  }
+  return NULL;
 }
 // mamma mia
